@@ -89,6 +89,7 @@ a {
     display: inline-block;
     margin-top: 3em;
     width: fit-content;
+    position: relative; /* need this as a reference point for the ::after */
 
     transition: all .2s;
 }
@@ -106,6 +107,34 @@ a {
 .btn-white {
     background: #fff;
     color: #777;
+}
+
+.btn-animated {
+    animation: moveInBottom 2s ease-out .75s;
+    animation-fill-mode: backwards; /* applies the 0% settings to the element before the animation even starts */
+}
+
+.btn::after {
+    content: ''; /* need to have this even if empty */
+    display: inline-block; /* also need the display properties */
+    height: 100%;
+    width: 100%; /* 100% of the width of the btn */
+    position: absolute; /* needs a reference point - see parent element? */
+    top: 0;
+    left: 0;
+    z-index: -1; /* look this up but its also needed */
+
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
 }
 
 @keyframes moveInLeft {
@@ -135,6 +164,19 @@ a {
         transform: translateX(-10px);
 
     }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(75px);
+    }
+
 
     100% {
         opacity: 1;
