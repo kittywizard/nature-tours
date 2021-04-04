@@ -56,26 +56,32 @@ body {
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
+
+    backface-visibility: hidden; /* this prevents the slight shaking effect at the end of the animation */
 }
 
 .header-main {
     font-size: 2em;
     letter-spacing: 16px;
     display: block;
-    animation: moveInLeft 3s;
+    animation: moveInLeft 2s ease-out;
 }
 
 .header-sub {
     font-size: 0.75em;
     letter-spacing: 10px;
     display: block;
-    animation: moveInRight 3s;
+    animation: moveInRight 2s ease-out;
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
         transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
     }
 
 
@@ -89,6 +95,11 @@ body {
     0% {
         opacity: 0;
         transform: translateX(100px);
+    }
+    
+    80% {
+        transform: translateX(-10px);
+
     }
 
     100% {
