@@ -32,15 +32,14 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);      /* x and y axis - starting from top left, top right, bottom right, bottom left */
 }
 
-.logo-box {
-    /*using absolute positioning???*/
+.header-logo-box {
     position: absolute;
     top: 1.4em;
     left: 1.4em;
     text-align: center;
 }
 
-.logo {
+.header-logo {
     height: 1.5em;
 }
 
