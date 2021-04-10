@@ -1,0 +1,22 @@
+{
+  "name": "nature-tours",
+  "version": "1.0.0",
+  "description": "Nature Tours Website",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kittywizard/nature-tours.git"
+  },
+  "author": "Marleigh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kittywizard/nature-tours/issues"
+  },
+  "homepage": "https://github.com/kittywizard/nature-tours#readme",
+  "devDependencies": {
+    "sass": "^1.32.8"
+  }
+}
