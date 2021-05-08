@@ -1,0 +1,29 @@
+.section-about {
+    background-color: $color-gray-light;
+    padding: 25em 0;
+    margin-top: -20vh; //this allows the section to go up into the angled portion of the header (95vh - 75vh - see polygon)
+
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+    grid-template-areas: 
+        "header header"
+        "copy image"
+        "copy image"
+        "button image";
+
+    .header-secondary {
+        grid-area: "header";
+    }
+
+    &--header {
+        grid-area: "copy";
+    }
+
+    &--copy {
+        grid-area: "copy";
+    }
+
+    &--link {
+        grid-area: "button";
+    }
+}

@@ -78,6 +78,23 @@ a {
   animation: moveInRight 2s ease-out;
 }
 
+.header-secondary {
+  font-size: 2.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+}
+.header-secondary:hover {
+  transform: skewY(1deg);
+  text-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+
 /* COMPONENTS */
 .btn:link,
 .btn:visited {
@@ -167,6 +184,27 @@ a {
   justify-content: center;
   align-items: center;
   /* not quite center, but its not random absolute positioning! */
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25em 0;
+  margin-top: -20vh;
+  display: grid;
+  grid-template: repeat(4, 1fr)/repeat(2, 1fr);
+  grid-template-areas: "header header" "copy image" "copy image" "button image";
+}
+.section-about .header-secondary {
+  grid-area: "header";
+}
+.section-about--header {
+  grid-area: "copy";
+}
+.section-about--copy {
+  grid-area: "copy";
+}
+.section-about--link {
+  grid-area: "button";
 }
 
 /*# sourceMappingURL=style.css.map */
