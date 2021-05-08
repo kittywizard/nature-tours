@@ -1,0 +1,33 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            rgba($primary-light, 0.8),
+            rgba($primary-dark, 0.8)),
+        url('../img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /* x and y axis - starting from top left, top right, bottom right, bottom left */
+
+    &-logo-box {
+            position: absolute;
+            top: 1.4em;
+            left: 1.4em;
+            text-align: center;
+    }
+
+    &-logo {
+            height: 1.5em;
+    }
+
+    &-content {
+            height: 75vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* not quite center, but its not random absolute positioning! */
+    }
+
+}

@@ -1,0 +1,36 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: $color-gray-dark;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-primary {
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+
+    backface-visibility: hidden;
+    /* this prevents the slight shaking effect at the end of the animation */
+        
+    &__main {
+            font-size: 2em;
+            letter-spacing: 16px;
+            display: block;
+            animation: moveInLeft 2s ease-out;
+        }
+
+    &__sub {
+            font-size: 0.75em;
+            letter-spacing: 10px;
+            display: block;
+            animation: moveInRight 2s ease-out;
+        }
+        
+}
+

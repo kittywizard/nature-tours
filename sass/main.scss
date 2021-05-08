@@ -1,118 +1,17 @@
+/* VARIABLES, MIXINS ETC. */
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
+/* BASE STYLES */
 @import "base/base";
 @import "base/animations";
 @import "base/typography";
 @import "base/utilities";
 
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
-
+/* COMPONENTS */
 @import "components/button";
 
+/* LAYOUT */
+@import "layout/header";
 
-.header {
-    height: 95vh;
-    background-image: linear-gradient(to right bottom,
-                     rgba($primary-light, 0.8), 
-                     rgba($primary-dark, 0.8)), 
-                     url('../img/hero.jpg');
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);      /* x and y axis - starting from top left, top right, bottom right, bottom left */
-}
-
-.header-logo-box {
-    position: absolute;
-    top: 1.4em;
-    left: 1.4em;
-    text-align: center;
-}
-
-.header-logo {
-    height: 1.5em;
-}
-
-.header-content {
-    height: 75vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* not quite center, but its not random absolute positioning! */
-}
-
-.header-primary {
-    color: #fff;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-align: center;
-
-    backface-visibility: hidden; /* this prevents the slight shaking effect at the end of the animation */
-}
-
-.header-main {
-    font-size: 2em;
-    letter-spacing: 16px;
-    display: block;
-    animation: moveInLeft 2s ease-out;
-}
-
-.header-sub {
-    font-size: 0.75em;
-    letter-spacing: 10px;
-    display: block;
-    animation: moveInRight 2s ease-out;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translateX(10px);
-    }
-
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    
-    80% {
-        transform: translateX(-10px);
-
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(75px);
-    }
-
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
