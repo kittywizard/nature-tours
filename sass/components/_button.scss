@@ -1,0 +1,63 @@
+.btn:link,
+.btn:visited {
+    border-radius: 100px;
+    padding: 1em 3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 3em;
+    width: fit-content;
+    position: relative;
+    /* need this as a reference point for the ::after */
+
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 5px -5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background: #fff;
+    color: $color-gray-dark;
+}
+
+.btn-animated {
+    animation: moveInBottom 2s ease-out .75s;
+    animation-fill-mode: backwards;
+    /* applies the 0% settings to the element before the animation even starts */
+}
+
+.btn::after {
+    content: '';
+    /* need to have this even if empty */
+    display: inline-block;
+    /* also need the display properties */
+    height: 100%;
+    width: 100%;
+    /* 100% of the width of the btn */
+    position: absolute;
+    /* needs a reference point - see parent element? */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* look this up but its also needed */
+
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
