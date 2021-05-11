@@ -1,29 +1,37 @@
 .section-about {
     background-color: $color-gray-light;
-    padding: 25em 0;
+    padding: 5em 0;
     margin-top: -20vh; //this allows the section to go up into the angled portion of the header (95vh - 75vh - see polygon)
 
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(2, 1fr);
     grid-template-areas: 
         "header header"
-        "copy image"
-        "copy image"
-        "button image";
+        "block-1 image"
+        "block-2 image"
+        "button button";
+    gap: 1em 3em;
+    align-items: center;
 
-    .header-secondary {
-        grid-area: "header";
-    }
+        .header-secondary {
+            grid-area: header;
+            margin-bottom: 0;
+        }
+        
+        &--block-1 {
+            grid-area: block-1;
+        }
 
-    &--header {
-        grid-area: "copy";
-    }
+        &--block-2 {
+            grid-area: block-2;
+        }
 
-    &--copy {
-        grid-area: "copy";
-    }
+        &--link {
+            grid-area: button;
+        }
 
-    &--link {
-        grid-area: "button";
-    }
+        .about-image-collage {
+            grid-area: image;
+
+        }
 }

@@ -158,6 +158,23 @@ a {
   opacity: 0;
 }
 
+.section-about--link {
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px solid #55c57a;
+  padding: 0.1em;
+  width: fit-content;
+  font-size: 1.4rem;
+}
+.section-about--link:hover, .section-about--link:focus {
+  color: #7ed56f;
+}
+.section-about--link:active {
+  color: #7ed56f;
+}
+
 /* LAYOUT */
 .header {
   height: 95vh;
@@ -188,23 +205,29 @@ a {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25em 0;
+  padding: 5em 0;
   margin-top: -20vh;
   display: grid;
   grid-template: repeat(4, 1fr)/repeat(2, 1fr);
-  grid-template-areas: "header header" "copy image" "copy image" "button image";
+  grid-template-areas: "header header" "block-1 image" "block-2 image" "button button";
+  gap: 1em 3em;
+  align-items: center;
 }
 .section-about .header-secondary {
-  grid-area: "header";
+  grid-area: header;
+  margin-bottom: 0;
 }
-.section-about--header {
-  grid-area: "copy";
+.section-about--block-1 {
+  grid-area: block-1;
 }
-.section-about--copy {
-  grid-area: "copy";
+.section-about--block-2 {
+  grid-area: block-2;
 }
 .section-about--link {
-  grid-area: "button";
+  grid-area: button;
+}
+.section-about .about-image-collage {
+  grid-area: image;
 }
 
 /*# sourceMappingURL=style.css.map */
